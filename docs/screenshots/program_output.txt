@@ -1,0 +1,8 @@
+=== Correctness tests ===
+MergeSort: all 100 tests passed (vs Arrays.sort)
+QuickSort: all 100 tests passed (vs Arrays.sort)
+DeterministicSelect: all 100 tests passed (vs Arrays.sort(a)[k])
+ClosestPair: all 50 tests passed (vs brute force)
+
+=== Running experiments (this can take a minute) ===
+Results saved to results/results.csv
