@@ -22,21 +22,21 @@ public class Experiment {
                 MergeSorter.sort(mergeData);
                 long t2 = System.nanoTime();
                 writer.write(String.format("MergeSort,%s,%d,%.3f,%d,%d%n",
-                        type, size, (t2 - t1) / 1e6, MergeSorter.getMaxDepth(), MergeSorter.comparisons));
+                        type, size, ((t2 - t1) / 1e6), MergeSorter.getMaxDepth(), MergeSorter.comparisons));
 
                 int[] quickData = data.clone();
                 long t3 = System.nanoTime();
                 QuickSorter.sort(quickData);
                 long t4 = System.nanoTime();
                 writer.write(String.format("QuickSort,%s,%d,%.3f,%d,%d%n",
-                        type, size, (t4 - t3) / 1e6, QuickSorter.getMaxDepth(), QuickSorter.comparisons));
+                        type, size, ((t4 - t3) / 1e6), QuickSorter.getMaxDepth(), QuickSorter.comparisons));
 
                 int[] selectData = data.clone();
                 long t5 = System.nanoTime();
                 DeterministicSelector.select(selectData, size / 2);
                 long t6 = System.nanoTime();
                 writer.write(String.format("Select,%s,%d,%.3f,%d,%d%n",
-                        type, size, (t6 - t5) / 1e6, DeterministicSelector.getMaxDepth(), DeterministicSelector.comparisons));
+                        type, size, ((t6 - t5) / 1e6), DeterministicSelector.getMaxDepth(), DeterministicSelector.comparisons));
             }
         }
 
@@ -47,7 +47,7 @@ public class Experiment {
             ClosestPairSolver.closestPair(points);
             long t8 = System.nanoTime();
             writer.write(String.format("ClosestPair,random,%d,%.3f,%d,0%n",
-                    size, (t8 - t7) / 1e6, ClosestPairSolver.getMaxDepth()));
+                    size, ((t8 - t7) / 1e6), ClosestPairSolver.getMaxDepth()));
         }
 
         writer.close();
